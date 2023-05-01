@@ -12,6 +12,7 @@ function PetsLostResults() {
   const { results: petsLost, isLoading } = usePetsLostResults();
   const [showModal, setShowModal] = useState(false);
   const [petID, setPetId] = useState(null);
+  const [petName, setPetName] = useState(null);
   const formRef = useRef(null);
   const [message, setMessage] = useState("");
   const handlerSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -43,42 +44,39 @@ function PetsLostResults() {
               onClick={() => {
                 setShowModal(true);
                 setPetId(pet.objectID);
+                setPetName(pet.name);
               }}
               id={pet.objectID}
               name={pet.name}
               location={pet.location}
               picture={pet.photo}
             />
-            <div>
-              <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
-                <form
-                  ref={formRef}
-                  onSubmit={handlerSubmit}
-                  className={css.form}
-                >
-                  <Title>Reportar info de {pet.name}</Title>
-                  <TextField style="dark" typeInput="name" name="reporter">
-                    nombre
-                  </TextField>
-                  <TextField style="dark" typeInput="phone" name="phone_number">
-                    telefono
-                  </TextField>
-                  <TextArea style="dark" name="message">
-                    Donde lo viste?
-                  </TextArea>
-                  {message && (
-                    <div className={css.message}>
-                      <Text bold>{message}</Text>
-                    </div>
-                  )}
-                  <Secondary type="submit">Enviar información</Secondary>
-                  <Cancel onClick={() => setShowModal(false)}>Cancelar</Cancel>
-                </form>
-              </Modal>
-            </div>
           </div>
         ))
       )}
+      <div>
+        <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
+          <form ref={formRef} onSubmit={handlerSubmit} className={css.form}>
+            <Title>Reportar info de {petName}</Title>
+            <TextField style="dark" typeInput="name" name="reporter">
+              nombre
+            </TextField>
+            <TextField style="dark" typeInput="phone" name="phone_number">
+              telefono
+            </TextField>
+            <TextArea style="dark" name="message">
+              Donde lo viste?
+            </TextArea>
+            {message && (
+              <div className={css.message}>
+                <Text bold>{message}</Text>
+              </div>
+            )}
+            <Secondary type="submit">Enviar información</Secondary>
+            <Cancel onClick={() => setShowModal(false)}>Cancelar</Cancel>
+          </form>
+        </Modal>
+      </div>
     </div>
   );
 }
