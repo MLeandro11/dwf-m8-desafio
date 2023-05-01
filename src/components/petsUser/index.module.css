@@ -1,0 +1,49 @@
+.noReports {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 60vh;
+}
+.noReports > a > button {
+  width: 100%;
+}
+.panel {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+.cardsList {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.modalDelete,
+.modalLocated {
+  background-color: #26302e;
+  padding: 20px 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+.buttonsModal {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+.message > p {
+  text-align: center;
+  color: red;
+}

@@ -1,0 +1,26 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+  padding: 0 25px;
+}
+
+.title > h1 {
+  color: #eb6372;
+}
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.buttons > a > button {
+  width: 100%;
+}
+
+.petsLost {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+}

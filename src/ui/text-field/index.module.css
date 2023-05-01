@@ -1,0 +1,32 @@
+.root {
+  display: flex;
+  flex-direction: column;
+}
+.label,
+.labelDark {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+.labelDark {
+  color: #ffffff;
+}
+.light,
+.dark,
+.textArea,
+.textAreaDark {
+  padding: 10px 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+.textArea,
+.textAreaDark {
+  width: 100%;
+  min-height: 130px;
+}
+.dark,
+.textAreaDark {
+  background-color: #4a5553;
+  color: #ccc;
+}

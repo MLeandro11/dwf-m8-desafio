@@ -1,0 +1,25 @@
+.login,
+.password {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+.password {
+  gap: 120px;
+}
+.title {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.body,
+.bodyPassword {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+  align-items: center;
+}
+.bodyPassword {
+  gap: 25px;
+}

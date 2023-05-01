@@ -1,0 +1,17 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.message > p {
+  text-align: center;
+  color: red;
+}
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.buttons > a > button {
+  width: 100%;
+}

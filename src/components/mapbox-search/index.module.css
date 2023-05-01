@@ -1,0 +1,12 @@
+.mapSearch {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.mapSearch > p {
+  text-align: center;
+}
+.geocoder > * {
+  width: 100%;
+  max-width: none;
+}

@@ -1,0 +1,47 @@
+.title {
+  font-family: "Poppins";
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0;
+  text-align: center;
+}
+.subTitle,
+.subTitleBold {
+  font-family: "Poppins";
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0;
+  text-align: center;
+}
+.subTitleBold {
+  font-weight: 700;
+}
+.text {
+  font-family: "Poppins";
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+}
+.textBold {
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+  text-align: center;
+}
+.caption {
+  font-family: "Poppins";
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+  text-transform: uppercase;
+}
+.link {
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin: 0;
+  text-decoration: underline;
+  cursor: pointer;
+}

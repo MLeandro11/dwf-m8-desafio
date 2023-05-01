@@ -1,0 +1,14 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.login {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.login > a {
+  text-decoration: none;
+  color: #5a8fec;
+}

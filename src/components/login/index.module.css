@@ -1,0 +1,33 @@
+.login,
+.formLogin,
+.formPassword,
+.password {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.formPassword {
+  gap: 120px;
+}
+.password > h2 {
+  background-color: #00a884;
+}
+
+.signup {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.signup > a {
+  text-decoration: none;
+  color: #5a8fec;
+}
+.button {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.message {
+  color: red;
+  text-align: center;
+}
