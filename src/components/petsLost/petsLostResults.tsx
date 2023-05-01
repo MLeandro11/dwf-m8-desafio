@@ -31,53 +31,55 @@ function PetsLostResults() {
     setMessage("");
   };
   return (
-    <div className={css.container}>
-      {isLoading && <Spinner />}
-      {petsLost && petsLost.length < 0 ? (
+    console.log(petsLost),
+    (
+      <div className={css.container}>
+        {isLoading ? (
+          <Spinner />
+        ) : petsLost.length === 0 ? (
+          <Text>No hay mascotas perdidas cerca</Text>
+        ) : (
+          petsLost.map((pet) => (
+            <div key={pet.objectID}>
+              <CardPet
+                onClick={() => {
+                  setShowModal(true);
+                  setPetId(pet.objectID);
+                  setPetName(pet.name);
+                }}
+                id={pet.objectID}
+                name={pet.name}
+                location={pet.location}
+                picture={pet.photo}
+              />
+            </div>
+          ))
+        )}
         <div>
-          <Text>No hay mascotas perdidas cerca de tu ubicación</Text>
+          <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
+            <form ref={formRef} onSubmit={handlerSubmit} className={css.form}>
+              <Title>Reportar info de {petName}</Title>
+              <TextField style="dark" typeInput="name" name="reporter">
+                nombre
+              </TextField>
+              <TextField style="dark" typeInput="phone" name="phone_number">
+                telefono
+              </TextField>
+              <TextArea style="dark" name="message">
+                Donde lo viste?
+              </TextArea>
+              {message && (
+                <div className={css.message}>
+                  <Text bold>{message}</Text>
+                </div>
+              )}
+              <Secondary type="submit">Enviar información</Secondary>
+              <Cancel onClick={() => setShowModal(false)}>Cancelar</Cancel>
+            </form>
+          </Modal>
         </div>
-      ) : (
-        petsLost.map((pet) => (
-          <div key={pet.objectID}>
-            <CardPet
-              onClick={() => {
-                setShowModal(true);
-                setPetId(pet.objectID);
-                setPetName(pet.name);
-              }}
-              id={pet.objectID}
-              name={pet.name}
-              location={pet.location}
-              picture={pet.photo}
-            />
-          </div>
-        ))
-      )}
-      <div>
-        <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
-          <form ref={formRef} onSubmit={handlerSubmit} className={css.form}>
-            <Title>Reportar info de {petName}</Title>
-            <TextField style="dark" typeInput="name" name="reporter">
-              nombre
-            </TextField>
-            <TextField style="dark" typeInput="phone" name="phone_number">
-              telefono
-            </TextField>
-            <TextArea style="dark" name="message">
-              Donde lo viste?
-            </TextArea>
-            {message && (
-              <div className={css.message}>
-                <Text bold>{message}</Text>
-              </div>
-            )}
-            <Secondary type="submit">Enviar información</Secondary>
-            <Cancel onClick={() => setShowModal(false)}>Cancelar</Cancel>
-          </form>
-        </Modal>
       </div>
-    </div>
+    )
   );
 }
 
